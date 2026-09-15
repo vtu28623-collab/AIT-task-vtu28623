@@ -1,0 +1,34 @@
+monkey = 0
+box = 2
+banana = 4
+
+def move_monkey(location):
+    global monkey
+    monkey = location
+    print("Monkey moved to location", monkey)
+
+def push_box():
+    global monkey, box
+
+    if monkey == box:
+        box = banana
+        monkey = box
+        print("Monkey pushed the box to location", box)
+    else:
+        print("Monkey is not near the box")
+
+print("Initial position:")
+print("Monkey:", monkey)
+print("Box:", box)
+print("Banana:", banana)
+
+move_monkey(2)
+push_box()
+
+print("\nFinal position:")
+print("Monkey:", monkey)
+print("Box:", box)
+print("Banana:", banana)
+
+if box == banana:
+    print("Box is correctly positioned for reaching the banana")
